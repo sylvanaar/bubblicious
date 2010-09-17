@@ -1,0 +1,18 @@
+## Interface: 30300
+## X-Compatible-With: 40000
+## X-Since-Interface: 30300
+
+## Title: Bubblicious
+## Notes: Customize the appearance of the chat bubbles.
+## Version: @project-version@ 
+## Author: Sylvanaar
+
+## OptDeps: LibStub, Ace3
+
+#@no-lib-strip@
+libs\LibStub\LibStub.lua
+libs\AceAddon-3.0\AceAddon-3.0.xml
+libs\AceDB-3.0\AceDB-3.0.xml
+#@end-no-lib-strip@
+
+Bubbles.lua
