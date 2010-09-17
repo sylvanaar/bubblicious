@@ -10,3 +10,5 @@ externals:
     libs/AceDB-3.0: 
         url: svn://svn.wowace.com/wow/ace3/mainline/trunk/AceDB-3.0
         tag: latest
+
+license-output: LICENSE.txt
