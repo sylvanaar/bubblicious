@@ -105,7 +105,6 @@ local options =  {
     args = {
     	shorten = toggleOption,
     	color = toggleOption,
-    	format = toggleOption,
     	icons = toggleOption,
         font = toggleOption,
         fontsize = {
@@ -126,6 +125,26 @@ local BUBBLE_SCAN_THROTTLE = 0.1
 
 function addon:OnInitialize()
     self.db = LibStub("AceDB-3.0"):New("BubbliciousDB", defaults, "Default")
+    
+	local acreg = LibStub("AceConfigRegistry-3.0")
+	acreg:RegisterOptionsTable(L.module_name, options)
+
+	local acdia = LibStub("AceConfigDialog-3.0")
+	acdia:AddToBlizOptions(L.module_name, L.module_name)
+
+    
+    local cmd_name = L.module_name:upper()
+	SlashCmdList[cmd_name] = 
+    	function()     
+        	local acd = LibStub("AceConfigDialog-3.0")
+            if acd.OpenFrames[L.module_name] then
+                acd:Close(L.module_name)
+            else
+                acd:Open(L.module_name)
+            end
+        end
+        
+    _G["SLASH_"..cmd_name.."1"] = "/"..cmd_name:lower()
 end
 
 -- things to do when the module is enabled
