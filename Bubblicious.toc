@@ -7,6 +7,8 @@
 ## Version: @project-version@ 
 ## Author: Sylvanaar
 
+## SavedVariables: BubbliciousDB 
+
 ## OptDeps: LibStub, Ace3
 
 #@no-lib-strip@
