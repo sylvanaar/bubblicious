@@ -16,5 +16,8 @@ externals:
     libs/AceConfigDialog-3.0: 
         url: svn://svn.wowace.com/wow/ace3/mainline/trunk/AceConfig-3.0/AceConfigDialog-3.0
         tag: latest
+    libs/CallbackHandler-1.0:
+        url: svn://svn.wowace.com/wow/callbackhandler/mainline/trunk/CallbackHandler-1.0
+        tag: latest
 
 license-output: LICENSE.txt
