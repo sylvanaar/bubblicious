@@ -1,4 +1,4 @@
-## Interface: 40200
+## Interface: 50001
 
 ## Title: Bubblicious
 ## Notes: Customize the appearance of the chat bubbles.
