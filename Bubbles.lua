@@ -286,22 +286,25 @@ end
 -- This function is also provided under the MIT license, and is free
 -- for you to reuse in your own addons
 function addon:IterateChatBubbles(funcToCall)
-    for i=1,WorldFrame:GetNumChildren() do
+    for i = 1, WorldFrame:GetNumChildren() do
         local v = select(i, WorldFrame:GetChildren())
-        local b = v:GetBackdrop()
-        if b and b.bgFile == "Interface\\Tooltips\\ChatBubble-Background" then
-            for i=1,v:GetNumRegions() do
+        local b = v.isChatBubble == nil and v:GetBackdrop()
+        if v.isChatBubble ~= false and b and b.bgFile == "Interface\\Tooltips\\ChatBubble-Background" then
+            v.isChatBubble = true
+            for i = 1, v:GetNumRegions() do
                 local frame = v
                 local v = select(i, v:GetRegions())
                 if v:GetObjectType() == "FontString" then
                     local fontstring = v
                     if type(funcToCall) == "function" then
                         funcToCall(frame, fontstring)
-                    else 
+                    else
                         self[funcToCall](self, frame, fontstring)
                     end
                 end
             end
+        else
+            v.isChatBubble = false
         end
     end
 end
